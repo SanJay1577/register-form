@@ -141,7 +141,7 @@ function App() {
           <Form.Control
             id="message"
             name="message"
-            value={values.phone}
+            value={values.message}
             onChange={handleChange}
             onBlur={handleBlur}
             as="textarea"
