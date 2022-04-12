@@ -4,6 +4,8 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
+//validating the field useing yup validation
+
 const formValidationSchema = yup.object({
   name: yup.string().required(),
   email: yup
@@ -18,6 +20,7 @@ const formValidationSchema = yup.object({
 });
 
 function App() {
+  //using formik validating the erros and handles and passing the value on submit
   const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
     useFormik({
       initialValues: {
@@ -31,7 +34,14 @@ function App() {
       },
       validationSchema: formValidationSchema,
       onSubmit: (values) => {
-        alert("The Required feild is validated");
+        prompt(`The Required feild is validated 
+               name: ${values.name} 
+                email:${values.email}
+                phone:${values.phone}
+                country:${values.country}
+                city:${values.city}
+                state:${values.state}
+                message:${values.message}`);
       },
     });
 
@@ -52,10 +62,11 @@ function App() {
             placeholder="eg. Sanjay"
           />
           <br />
-          <div className="required">
-            {" "}
-            {touched.name && errors.name ? errors.name : ""}{" "}
-          </div>
+          {touched.name && errors.name ? (
+            <div className="required">{errors.name}</div>
+          ) : (
+            ""
+          )}
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -70,9 +81,11 @@ function App() {
             placeholder="eg. xyz@gmail.com"
           />
           <br />
-          <div className="required">
-            {touched.name && errors.email ? errors.email : ""}
-          </div>
+          {touched.email && errors.email ? (
+            <div className="required">{errors.email}</div>
+          ) : (
+            ""
+          )}
         </Form.Group>
 
         <Form.Group className="mb-3">
