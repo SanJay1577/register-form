@@ -34,7 +34,7 @@ function App() {
       },
       validationSchema: formValidationSchema,
       onSubmit: (values) => {
-        prompt(`The Required feild is validated 
+        alert(`The Required feild is validated 
                name: ${values.name} 
                 email:${values.email}
                 phone:${values.phone}
