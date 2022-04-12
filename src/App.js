@@ -10,6 +10,11 @@ const formValidationSchema = yup.object({
     .string()
     .required()
     .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, "Pattern Not Matched"),
+  phone: yup.number().min(10, "Invalid Phone Number"),
+  country: yup.string(),
+  city: yup.string(),
+  state: yup.string(),
+  message: yup.string(),
 });
 
 function App() {
@@ -18,6 +23,11 @@ function App() {
       initialValues: {
         name: "",
         email: "",
+        phone: "",
+        country: "",
+        city: "",
+        state: "",
+        message: "",
       },
       validationSchema: formValidationSchema,
       onSubmit: (values) => {
@@ -67,29 +77,63 @@ function App() {
 
         <Form.Group className="mb-3">
           <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="tel" placeholder="Enter Phone Number" />
+          <Form.Control
+            id="phone"
+            name="phone"
+            value={values.phone}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            type="tel"
+            placeholder="Enter Phone Number"
+          />
         </Form.Group>
 
         <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>Country</Form.Label>
-            <Form.Control />
+            <Form.Control
+              id="country"
+              name="country"
+              value={values.country}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
           </Form.Group>
 
           <Form.Group as={Col}>
             <Form.Label>City</Form.Label>
-            <Form.Control />
+            <Form.Control
+              id="city"
+              name="city"
+              value={values.city}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
           </Form.Group>
 
           <Form.Group as={Col}>
             <Form.Label>State</Form.Label>
-            <Form.Control />
+            <Form.Control
+              id="state"
+              name="state"
+              value={values.state}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
           </Form.Group>
         </Row>
 
         <Form.Group className="mb-3">
           <Form.Label>Message</Form.Label>
-          <Form.Control as="textarea" rows={3} />
+          <Form.Control
+            id="message"
+            name="message"
+            value={values.phone}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            as="textarea"
+            rows={3}
+          />
         </Form.Group>
 
         <Button variant="primary" type="submit">

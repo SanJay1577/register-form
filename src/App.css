@@ -32,8 +32,11 @@ body{
 }
 
 .required{
-  color:crimson;
+  color:black;
   font-weight: bolder;
+  background-color: crimson;
+  border-radius: 3px;
+  padding:2px;
 }
 
 
