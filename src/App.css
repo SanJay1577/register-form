@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap');
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+
+}
+
+body{
+  background: linear-gradient(to right, #FD297A, #9424F0 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+  width:700px;
+  margin-top:7rem;
+  padding:5rem;
+  cursor:pointer;
+  background : rgba(255,255,255,0.06);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
+  border-radius: 30px;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
+
+
+}
+
+.required{
+  color:crimson;
+  font-weight: bolder;
+}
+
+
+@media only screen and (min-width: 280px) and (max-width: 600px){
+  .App{
+   width:95%;
+   margin-top:0.5rem;
+   margin-left:7px;
+   padding:1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+    
+  }
+}
