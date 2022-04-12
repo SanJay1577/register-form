@@ -35,13 +35,13 @@ function App() {
       validationSchema: formValidationSchema,
       onSubmit: (values) => {
         alert(`The Required feild is validated 
-               name: ${values.name} 
-                email:${values.email}
-                phone:${values.phone}
-                country:${values.country}
-                city:${values.city}
-                state:${values.state}
-                message:${values.message}`);
+               name:    ${values.name} 
+               email:   ${values.email}
+               phone:   ${values.phone}
+               country: ${values.country}
+               city:    ${values.city}
+               state:   ${values.state}
+               message: ${values.message}`);
       },
     });
 
