@@ -99,6 +99,11 @@ function App() {
             type="tel"
             placeholder="Enter Phone Number"
           />
+                    {touched.phone && errors.phone ? (
+            <div className="required">{errors.phone}</div>
+          ) : (
+            ""
+          )}
         </Form.Group>
 
         <Row className="mb-3">
